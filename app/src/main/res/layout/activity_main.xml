@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="#C1ECFF"
+    >
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Выберите метод сжатия:"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textSize="68px" />
+
+    <RadioGroup
+        android:id="@+id/algorithmRadioGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/radioButtonLZ78"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="LZ78"
+            android:checked="true" />
+
+        <RadioButton
+            android:id="@+id/radioButtonHuffman"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Хаффман" />
+
+        <RadioButton
+            android:id="@+id/radioButtonEntropy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Энтропийное \n кодирование" />
+    </RadioGroup>
+
+    <EditText
+        android:id="@+id/inputEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Введите текст"
+        android:padding="8dp"
+        android:minHeight="48dp"
+        android:layout_marginBottom="16dp"/>
+
+    <Button
+        android:id="@+id/compressButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="#2653FF"
+        android:text="Сжать" />
+
+    <Button
+        android:id="@+id/clearButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#FF9235"
+        android:text="Очистить" />
+
+    <TextView
+        android:id="@+id/resultTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Результат сжатия"
+        android:textSize="16sp"
+        android:padding="8dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="История сжатия"
+        android:textStyle="bold"
+        android:layout_marginTop="16dp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/historyRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>
